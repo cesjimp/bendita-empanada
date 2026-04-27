@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .bite-cutout {
+            clip-path: polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%);
+        }
+        .bite-cutout-reverse {
+            clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 15%);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(174, 42, 2, 0.2);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary": "#ffffff",
+                        "tertiary": "#6b5f00",
+                        "on-primary-fixed": "#3c0800",
+                        "on-tertiary-container": "#494000",
+                        "on-secondary-container": "#7b507d",
+                        "tertiary-fixed": "#f8e46e",
+                        "surface-container": "#ffe7fb",
+                        "surface-container-high": "#ffdefc",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#ffb4a2",
+                        "on-secondary-fixed-variant": "#613864",
+                        "inverse-surface": "#48214c",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#300b35",
+                        "surface": "#fff7fa",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#300b35",
+                        "tertiary-fixed-dim": "#dac755",
+                        "inverse-on-surface": "#ffebfb",
+                        "background": "#fff7fa",
+                        "surface-container-highest": "#ffd6fd",
+                        "on-primary-container": "#fffbff",
+                        "on-secondary-fixed": "#300b35",
+                        "surface-variant": "#ffd6fd",
+                        "surface-dim": "#ffc9fe",
+                        "on-surface-variant": "#5a413a",
+                        "on-tertiary-fixed-variant": "#514700",
+                        "primary-container": "#d1421d",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#b22c05",
+                        "primary": "#ae2a02",
+                        "secondary-fixed-dim": "#eab5ea",
+                        "on-primary-fixed-variant": "#891e00",
+                        "surface-container-low": "#ffeffa",
+                        "tertiary-container": "#beac3c",
+                        "secondary-container": "#ffc9fe",
+                        "outline-variant": "#e2bfb6",
+                        "primary-fixed-dim": "#ffb4a2",
+                        "outline": "#8e7069",
+                        "surface-bright": "#fff7fa",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#ffdbd2",
+                        "secondary-fixed": "#ffd6fd",
+                        "on-tertiary-fixed": "#201c00",
+                        "secondary": "#7a4f7d"
+                    },
+                    fontFamily: {
+                        "headline": ["Epilogue"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary/20">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+<nav class="flex justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">restaurant</span>
+<span class="font-headline font-black italic text-2xl tracking-tight text-primary">Bendita Empanada</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-label font-semibold text-sm uppercase tracking-widest text-zinc-600">
+<a class="text-primary" href="#home">Home</a>
+<a class="hover:text-primary transition-colors" href="#menu">Menu</a>
+<a class="hover:text-primary transition-colors" href="#locations">Locations</a>
+<a class="hover:text-primary transition-colors" href="#about">About</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-zinc-900 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="md:hidden p-2 text-zinc-900">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[795px] flex items-center overflow-hidden px-6 lg:px-12 py-12" id="home">
+<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-6 z-10">
+<span class="inline-block px-4 py-1.5 bg-primary/10 text-primary font-bold text-xs tracking-widest uppercase mb-6 rounded-full">Receta Ancestral</span>
+<h1 class="font-headline font-black text-5xl lg:text-7xl leading-[1.1] mb-8 text-on-surface">
+                        BENDITAS POR FUERA, <br/>
+<span class="text-primary italic">GLORIOSAS</span> POR DENTRO.
+                    </h1>
+<p class="font-body text-lg text-on-surface-variant max-w-md mb-10 leading-relaxed">
+                        Curaduría artesanal de empanadas gourmet. Masa quebradiza hecha a mano y rellenos que cuentan una historia en cada bocado.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bite-cutout bg-primary hover:bg-primary-container text-white px-10 py-5 font-bold tracking-tight text-lg transition-all flex items-center justify-center gap-3 active:scale-95">
+                            Explorar Menú <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-6 relative">
+<!-- Asymmetric Product Shot -->
+<div class="relative w-full aspect-square md:aspect-video lg:aspect-square flex items-center justify-center">
+<div class="absolute inset-0 bg-surface-container rounded-[4rem] rotate-6 scale-95 opacity-50"></div>
+<img alt="Empanada Artesanal" class="relative z-10 w-4/5 object-contain drop-shadow-[0_35px_35px_rgba(174,42,2,0.3)] hover:scale-105 transition-transform duration-700" data-alt="Close-up hero shot of a golden-brown artisanal empanada with a crispy braided edge, steam rising, warm studio lighting, neutral high-end background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6klu1mglamNLMBjARpV_P6vIxoJWe1_jnTmoJYITm0tGGk36sRm_cFZTViD6dLMqKr8-zwub3wMcxocn8KV4GnUtpefLHP6jq_HRZWR-cclZmJjRQmeH5EZ3wDuVwla9gXxIamx1yzvAlPoCsqI80_86gMqx4LsEk3G8sV5A-zXakOgCReVCkNd0_6-UlVzCRccWreruIS5eWR0xog-bvPXURL6cNGRN8yoCwtXhck4QPSFAmXsmJHAvHJFGLPznemmbyYR5qeEU"/>
+<!-- Floating Accent Icon -->
+<div class="absolute top-10 right-10 z-20 bg-white p-4 rounded-full shadow-xl animate-bounce">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Decoration -->
+<div class="absolute -bottom-24 -left-24 w-96 h-96 bg-primary-fixed rounded-full blur-[120px] opacity-20"></div>
+</section>
+<!-- Combos Section (Bento Grid Style) -->
+<section class="py-24 bg-surface-container-low px-6">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="font-headline font-extrabold text-4xl mb-4">Combos Benditos</h2>
+<p class="text-on-surface-variant max-w-xl">Selecciones curadas para los paladares más exigentes. El balance perfecto entre sabor y tradición.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Combo 1 -->
+<div class="group relative bg-surface-container-lowest bite-cutout p-8 shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="h-48 mb-8 overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Flat lay of three assorted empanadas and a dipping sauce on a wooden board, warm cinematic lighting, editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCgN3K5MfLa0ZTsOohlpLlcK4um40zgymsHM-64YM7_fJI-QDmTM2CKw31xOQ6HADT1u7XmRoYvkQb8TEHohtROvhESwt6Ez6JgPg5zBLcURnyS-wUCPyx6cJR0R0ln9-ikk-i0_fBxLLQjRxGtHOSs4Jw4Ryw6lZQ25Hf7mwm_7hJlvXRxZx8hd5bx9i8e9zQYIXzatIfNlflHHWYqwmoJm-2HGUn3awOCifxYQPTkDilczOMrgg-9nUbD7nxnoWTP7Aj4iboM6M"/>
+</div>
+<h3 class="font-headline font-bold text-2xl mb-2">Trilogía Sagrada</h3>
+<p class="text-on-surface-variant text-sm mb-6">3 Empanadas a elección + Salsa Chimichurri bendita.</p>
+<div class="flex justify-between items-center">
+<span class="text-2xl font-black text-primary">$12.900</span>
+<button class="p-3 bg-secondary-container text-secondary rounded-full active:scale-90 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+<!-- Combo 2 (Featured) -->
+<div class="group relative bg-primary bite-cutout p-8 shadow-2xl md:-translate-y-4 transition-all duration-500">
+<div class="absolute top-4 right-4 bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Best Seller</div>
+<div class="h-48 mb-8 overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Six golden empanadas arranged in a circle on a craft paper bag, rustic wooden table background, top-down view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9VH6lGMkR8wvUmJog09mHxe79WYhKS1HGRCdZklP9k7t23afnkcdRRH8i4XmoA9Dqut3y_1aJlQvKEnsfZlssGHj8qH41EidAcjwmW8B06VM6w3QOkZ06yEb5ioDkuPHkMP6jScPshPhmVCZ8ovxoIJYAcFtJOhplbMq1DjWGBpImrN3EJHcYKJYaPNF631M0vE73h_OdWP3cMjBelBLY8gHky2oRkNY2JatrKBgkTVdwXEwsju3cFsEUiTK1IcKajVZyq-ENFuc"/>
+</div>
+<h3 class="font-headline font-bold text-2xl mb-2 text-white">Banquete de Ángeles</h3>
+<p class="text-primary-fixed text-sm mb-6">6 Empanadas variadas + 2 Bebidas artesanales.</p>
+<div class="flex justify-between items-center">
+<span class="text-3xl font-black text-white">$24.500</span>
+<button class="p-3 bg-white text-primary rounded-full active:scale-90 transition-transform">
+<span class="material-symbols-outlined">shopping_basket</span>
+</button>
+</div>
+</div>
+<!-- Combo 3 -->
+<div class="group relative bg-surface-container-lowest bite-cutout p-8 shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="h-48 mb-8 overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Dozens of freshly baked empanadas stacked in a wooden box, vibrant and warm lighting, professional food photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE2YU8b3hkLqJFeofGGYTVXzFSfIx7P3EJNGOIeKIQpPqHgIDvCEzkcGII5RREvMY5CHxB3R73I8i032SJr3-ScvnulVEwGTcVhULfPFve1nWqcUOBUCCH1qaPHpVFZ_Wp6cPURwlUCAxIKjg354sIS_rDMZ8XbaDZxsY4U4-j0YW7_NwTm-3rjawAF77C6e7nu20WtuR-12uGNxuDC9KrhDH3D3ZWvDVjKxyrsRIyQ767QPEVtc-_YKv_bvnDC3Kuj9YbuVtvbuk"/>
+</div>
+<h3 class="font-headline font-bold text-2xl mb-2">La Gran Bendición</h3>
+<p class="text-on-surface-variant text-sm mb-6">12 Empanadas Mix + 1L de Gaseosa o Té frío.</p>
+<div class="flex justify-between items-center">
+<span class="text-2xl font-black text-primary">$42.000</span>
+<button class="p-3 bg-secondary-container text-secondary rounded-full active:scale-90 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Menu Explorer Section -->
+<section class="py-24 px-6" id="menu">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<h2 class="font-headline font-extrabold text-4xl mb-4">Explora el Menú</h2>
+<p class="text-on-surface-variant">Filtrado por tipo de experiencia y paladar.</p>
+</div>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+<button class="px-6 py-2 bg-primary text-white font-bold rounded-full text-sm whitespace-nowrap">Todas</button>
+<button class="px-6 py-2 bg-secondary-container text-secondary font-bold rounded-full text-sm whitespace-nowrap">Carnes</button>
+<button class="px-6 py-2 bg-tertiary-fixed text-on-tertiary-fixed font-bold rounded-full text-sm whitespace-nowrap">Vegetarianas</button>
+<button class="px-6 py-2 bg-surface-container text-on-secondary-container font-bold rounded-full text-sm whitespace-nowrap">Gourmet</button>
+<button class="px-6 py-2 bg-zinc-100 text-zinc-500 font-bold rounded-full text-sm whitespace-nowrap">Bebidas</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Item 1 -->
+<div class="bg-surface p-4 group">
+<div class="bite-cutout aspect-square overflow-hidden mb-4 bg-zinc-100">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Close up of a single beef empanada, detailed pastry texture, soft studio light, minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVKO_VukMe-_sbApp9Y9DujCTzvFJiDh5ZcFsCU6IFexWdowqe8GgvRpq2TLlvzB7q1fHaev4fcubjcecsSlq4Wz41bBSWoXdb9wf4wB8DPJTA0_vGKsnc14K6Lmv2dpw0Ry1Vp4sROfl1LD_Ws7MDPX2gyyUuYx1LTBKL_10DasYK9JBhwgHkfqGFi-nc8yFeC5LFFPVZaNvw8Cx2Ci6Gtq-SXqsgoMK63b_-Z7I0_PiO3iKHo6zXOrvh1MCok6BRzFt4bAkKvXw"/>
+</div>
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline font-bold text-lg">Carne Cortada a Cuchillo</h4>
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-zinc-500 text-xs mb-4">Cebolla caramelizada, verdeo y especias del norte.</p>
+<span class="font-black text-primary">$4.500</span>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface p-4 group">
+<div class="bite-cutout aspect-square overflow-hidden mb-4 bg-zinc-100">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Artisanal cheese empanada with fresh herbs visible on the pastry, high-end culinary plating" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp8fibZyyjeMaYPZLFpPXh2CxJJpw1XqA6vAE5CucZ3MqpZG1rGQ4bwgtyVnvNOSbsB1r9vD72OrHND0lr3hMeua3PYNBm852v-iUS8yJGJ2O7jQSVy4hd-cESrNpT0tzYVlU5sAfsbRGBUnOXdjpqQcTb9GNlYGe_JVG14jb111swsTfJ1ahdSbG8QLx--3QMAAZbz49wKDimy0q6Kid2x0tMFU2-Vv3lKWYVWDbQPl-BFqvUq_eCBc4Ag8ZhzBwBE2CsuoHzrNQ"/>
+</div>
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline font-bold text-lg">Cuatro Quesos</h4>
+<span class="material-symbols-outlined text-tertiary-container text-sm">eco</span>
+</div>
+<p class="text-zinc-500 text-xs mb-4">Mozzarella, fontina, azul y un toque de parmesano.</p>
+<span class="font-black text-primary">$4.200</span>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface p-4 group">
+<div class="bite-cutout aspect-square overflow-hidden mb-4 bg-zinc-100">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Empanada stuffed with caramelized onions and goat cheese, macro shot of the filling bursting through a small crack" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjCpqAAYrxuQTo5Ru4DaHRyUgyDX0BrapY0NCirLDEdM8B1BQpVkCOOBRz7aMoSD_D6T6PhaHlnAuA6pwcFXB2mhb_yzu4jwnsoMHASML4yIiJ3g8d1h1-9OMSyRg8eNPk-eVkUWQ9ERAU2cBc7i3VX1zYDDxWkgAJgxP_VfJ_m1voQ31uEg_6c06WkRYJLpp9d-QZYQyZY9fURNUF6L7klgWHmytrumUzcLNJh_Tz5MzhHhqmVLV8Ego1rOIztuZJ_7g4MKsa-vY"/>
+</div>
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline font-bold text-lg">Cebolla &amp; Queso de Cabra</h4>
+<span class="material-symbols-outlined text-primary text-sm">workspace_premium</span>
+</div>
+<p class="text-zinc-500 text-xs mb-4">Suave dulzor con el carácter del queso de cabra artesanal.</p>
+<span class="font-black text-primary">$5.100</span>
+</div>
+<!-- Item 4 -->
+<div class="bg-surface p-4 group">
+<div class="bite-cutout aspect-square overflow-hidden mb-4 bg-zinc-100">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Spicy chicken empanada with roasted peppers, dynamic lighting, warm color palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB79VNLiyS5dZmN6RD46_C1JktAgvVz7ps5Vfjnl6JxsMQFkYLg_jOm0a-vCdJ59zPhLrKsQMqurjAUtbzDOEU6L9lyPCAuxuM11B1IeMItr7RWElsZtV-xwf8vrPQ-EeieSWyS-vGNsc6ZOXdZrCjuMb-pJuvRnsMgAgBYcGgD3mHXH8VTDBYS65jW2p99JeuVLY0x-ZvCqYnOd9fLzoRHxbGCNlGBpZvZnwK9kX4G_Y1qX8qyEnf9ScmUZJGRfGHFCvD1XALt2u4"/>
+</div>
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline font-bold text-lg">Pollo al Curry</h4>
+<span class="material-symbols-outlined text-primary text-sm">local_fire_department</span>
+</div>
+<p class="text-zinc-500 text-xs mb-4">Pollo desmechado con curry suave y pimientos asados.</p>
+<span class="font-black text-primary">$4.800</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Artisanal Story Section -->
+<section class="py-24 bg-white px-6 overflow-hidden" id="about">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1 relative">
+<div class="bite-cutout-reverse w-full aspect-[4/5] bg-zinc-200 overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Artisan hands kneading dough on a flour-dusted marble surface, soft natural morning light, rustic bakery setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR99HlDtGcTg1uCUxZkPgTd0WP5M2fm4RcpYRj-EbzjmsEnuEA7-3vUOgBvbGUvV3ivmLJLdKN65WgUtAGhedxKK6wSjq7Zah-wZmA1h4Ddw-CWp9Gmcy-446y3J0vWAsTuncSIFNplgqVNayzhB-qi-uuoDyNVV-tu1UxHqQZHdtPmBkDBnhRP3dX1euHL-xssz9oxQg7MOQv1yMeBM8vde24qkKyN0gf0Qi0fHwy3f0d7JRBF_M2X0oTY-gAvDWMSEGw9Fei6lI"/>
+</div>
+<div class="absolute -bottom-8 -right-8 bg-tertiary-fixed p-8 bite-cutout shadow-xl max-w-xs">
+<h4 class="font-headline font-bold text-xl mb-2">El Secreto de la Masa</h4>
+<p class="text-on-tertiary-fixed-variant text-sm italic">"El crujido perfecto no es casualidad, es un ritual de paciencia y 24 horas de reposo."</p>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="font-headline font-black text-5xl mb-8">La Masa Bendita</h2>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-6">
+                        No usamos procesos industriales. Cada empanada es repulgada a mano por nuestros maestros artesanos, asegurando que el aire justo quede atrapado para crear esa textura quebradiza que nos define.
+                    </p>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-10">
+                        Nuestra harina orgánica y la manteca de campo seleccionada se fusionan en un proceso de 24 horas de levado en frío. El resultado: una masa ligera, dorada y con ese <span class="font-bold text-primary italic">Crunch Bendito</span> que solo encuentras aquí.
+                    </p>
+<button class="font-label font-bold text-primary flex items-center gap-2 group">
+                        Descubrir Nuestro Proceso 
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">east</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Location & Socials -->
+<section class="py-24 px-6 bg-surface-container-low" id="locations">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-5">
+<h2 class="font-headline font-extrabold text-4xl mb-8">Nuestros Altares</h2>
+<div class="space-y-6">
+<div class="bg-white p-6 bite-cutout shadow-sm border-l-4 border-primary">
+<h3 class="font-headline font-bold text-xl mb-1">Palermo Hollywood</h3>
+<p class="text-on-surface-variant text-sm mb-4">Calle Ficticia 1234, CABA</p>
+<div class="flex items-center gap-4 text-xs font-bold text-primary">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 11:00 - 23:00</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">phone</span> +54 11 4567 8901</span>
+</div>
+</div>
+<div class="bg-white/50 p-6 bite-cutout shadow-sm opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
+<h3 class="font-headline font-bold text-xl mb-1">Recoleta Boutique</h3>
+<p class="text-on-surface-variant text-sm mb-4">Av. Santa Fe 5678, CABA</p>
+</div>
+</div>
+<div class="mt-12">
+<h4 class="font-label font-bold text-sm uppercase tracking-widest mb-6">Síguenos en Instagram</h4>
+<div class="grid grid-cols-3 gap-3">
+<div class="aspect-square bg-zinc-200 bite-cutout overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Social media style photo of empanadas with a drink" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhCUUL8EsGsqZZvN8eGEj_bgI1w6P6WP89Khux-USBzajf-pdrzYquF6wLl1UhxErkL2_qwp-SR_zVFFdOYVyZq2Rj8kTll6NhAg3t1q26J81UDBMfv77Yzr7fa3h5Hlp73JGP06PIXl5VRU8Hyz5QkJySZFZg_QAznedOfDwAGW67d3ZYTrYjwDwiqAMrX40tR6hjDPgIj9Y1uzD4wilCQ-4NgaYh_DH732F3cGXAHCebhPJGEXc3lcbDzZJUdFfH8AqHG4dvdws"/>
+</div>
+<div class="aspect-square bg-zinc-200 bite-cutout overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up of empanada box with logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbmb03S0PA4K7hJzA-bAyFZ7DVq3XcSzfKFQMP8E1mtQi4C849s0g0yT8gykgxwobsC2qoTYAuCiRdShM0bVmtYW9uZ-t1Udx6Zg8Xn2yQhGNyuRtDqABUvuMwqMPOeMn5XDTezMJutb_nmu7TmoV3I80qazqIPiQ9fYk3zVZ_bsNJbNxGk3YI13GMGdv135E_lTe4xlHvqxHVC7HcXI07BCSZdjg-aZ8LBna-s6w3205Cl3HeVCkwK1mcFMk-P9z54Zq-J6ZPzf8"/>
+</div>
+<div class="aspect-square bg-zinc-200 bite-cutout overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Lifestyle photo of friends eating empanadas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7NOU4PHWXoVFZ9cBMl_kcXW0HQATxQbqEc8GMXUGH6iJZIYEjCEsUY8XL23Sw6OnqFSe1xuOFI-m61DmbUvOgIteKlkh_feEn2FSEEQDdz9N911gPqQelAw0CcwkHfFY29OFyElnGOWcNg-H6C1w9NtrYHOj_Mkwbhj_ybktR76Zp8DBu9yESJzMpMc7JnvgLbLur1XFd2z1v1WQ--ksxxXAzdiOCiYVlyNEYO8w3nk3YRdXG8LbL4WS7fiBsXipj5zSL_4DRg8k"/>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 h-[400px] lg:h-auto min-h-[400px] bite-cutout bg-zinc-100 overflow-hidden relative">
+<!-- Map Placeholder -->
+<div class="absolute inset-0 bg-zinc-200">
+<img class="w-full h-full object-cover opacity-50 grayscale" data-alt="Stylized map overview of Buenos Aires urban area with neutral professional tones" data-location="Buenos Aires" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-HfBRqcQGV98k0mrpeGP3z4zHBxxXc1Qf9jdt422_8w2g2niypuT6YbdAGRrLsSos1MUgM5sSnszVBkAddxfdeRKkbBzXtuNrIOoY6C_7ruhfMRhMhfv35Ra7zqV2-EofE6u2Bm53yIGjsFVNlyYqBUPXIHnhJuESnMgTCuAa8dHhY-3ecOYQIA3UWw_eIMT4_lOHo6406Eu727bwYY7zHbFaVZu13RxJALIORzuyMvEDKqsj_zcxoSig9JXfF6Bc8Ys8qWMNJ-E"/>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<span class="material-symbols-outlined text-primary text-6xl animate-bounce" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 border-t border-zinc-200 bg-zinc-50">
+<div class="flex flex-col items-center gap-8 w-full max-w-7xl mx-auto">
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-primary text-4xl">restaurant</span>
+<span class="font-headline text-3xl font-bold text-zinc-900 tracking-tighter italic">Bendita Empanada</span>
+</div>
+<div class="flex flex-wrap justify-center gap-8 font-label text-sm text-zinc-500">
+<a class="hover:text-primary transition-transform hover:translate-x-1" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-transform hover:translate-x-1" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-transform hover:translate-x-1" href="#">Contact Us</a>
+</div>
+<div class="flex gap-6">
+<a class="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-200 text-zinc-600 hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-200 text-zinc-600 hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+</div>
+<p class="font-body text-sm text-zinc-400 text-center">
+                © 2024 Bendita Empanada. Artisanal Curators.
+            </p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe bg-white z-50 rounded-t-3xl shadow-[0_-4px_20px_rgba(0,0,0,0.05)] border-t border-zinc-100">
+<a class="flex flex-col items-center justify-center text-primary [clip-path:polygon(0%_0%,85%_0%,100%_15%,100%_100%,0%_100%)] bg-orange-50 px-4 py-1 active:scale-90 duration-200" href="#home">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label text-[10px] font-semibold uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-50 transition-all active:scale-90 duration-200" href="#menu">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="font-label text-[10px] font-semibold uppercase tracking-wider">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-50 transition-all active:scale-90 duration-200" href="#locations">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-label text-[10px] font-semibold uppercase tracking-wider">Locales</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:bg-zinc-50 transition-all active:scale-90 duration-200" href="#about">
+<span class="material-symbols-outlined">info</span>
+<span class="font-label text-[10px] font-semibold uppercase tracking-wider">About</span>
+</a>
+</div>
+</body></html>
