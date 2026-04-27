@@ -32,11 +32,46 @@
     <style>
         :root { --primary: #ea542d; }
         body { font-family: 'Inter', sans-serif; overflow-x: hidden; color: #1a1a1a; }
-        /* Headings con Poppins */
+        /* Heading Hierarchy (WCAG: Poppins, consistent scaling) */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
             letter-spacing: -0.02em;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;  /* 40px base */
+        }
+        h2 {
+            font-size: 2rem;    /* 32px */
+        }
+        h3 {
+            font-size: 1.5rem;  /* 24px */
+        }
+        h4 {
+            font-size: 1.25rem; /* 20px */
+        }
+        h5 {
+            font-size: 1.1rem;  /* 17.6px */
+        }
+        h6 {
+            font-size: 1rem;    /* 16px */
+        }
+
+        /* Responsive scaling */
+        @media (min-width: 768px) {
+            h1 { font-size: 3.5rem; }  /* 56px */
+            h2 { font-size: 2.5rem; }  /* 40px */
+            h3 { font-size: 2rem; }    /* 32px */
+        }
+
+        @media (min-width: 1024px) {
+            h1 { font-size: 4rem; }    /* 64px */
+            h2 { font-size: 3rem; }    /* 48px */
+            h3 { font-size: 2.25rem; } /* 36px */
         }
 
         .font-brand-bold {
@@ -63,17 +98,111 @@
         .text-primary { color: var(--primary); }
         .bg-primary { background-color: var(--primary); }
         .image-rounded { border-radius: 40px; }
-        .btn-main {
+        /* Button System - Base Styles */
+        .btn-main,
+        .btn-primary,
+        .btn-secondary,
+        .btn-tertiary {
             border-radius: 30px;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        /* Primary Button - Main CTA */
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 32px;
+            font-size: 13px;
+            letter-spacing: 0.15em;
+            box-shadow: 0 8px 16px rgba(234, 84, 45, 0.25);
+        }
+
+        .btn-primary:hover {
+            background-color: #d9421e;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(234, 84, 45, 0.35);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        /* Secondary Button - Alternative Action */
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            padding: 12px 32px;
+            font-size: 13px;
+            letter-spacing: 0.15em;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(234, 84, 45, 0.05);
+            border-color: #d9421e;
+            color: #d9421e;
+        }
+
+        .btn-secondary:active {
+            transform: scale(0.98);
+        }
+
+        .btn-secondary:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        /* Tertiary Button - Less Important */
+        .btn-tertiary {
+            background-color: transparent;
+            color: var(--primary);
+            padding: 8px 16px;
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-decoration: underline;
+        }
+
+        .btn-tertiary:hover {
+            color: #d9421e;
+            text-decoration: none;
+        }
+
+        .btn-tertiary:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        /* Backward compatibility with .btn-main */
+        .btn-main {
+            padding: 12px 32px;
+            font-size: 13px;
+            letter-spacing: 0.15em;
+        }
+
+        .btn-main {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 8px 16px rgba(234, 84, 45, 0.25);
         }
 
         .btn-main:hover {
+            background-color: #d9421e;
             transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(234, 84, 45, 0.3);
+            box-shadow: 0 12px 24px rgba(234, 84, 45, 0.35);
         }
 
         .btn-main:active {
@@ -296,7 +425,7 @@
                     <div class="flex justify-center lg:justify-start gap-6">
                         <a
                             href="#sabores"
-                            class="btn-main bg-primary text-white px-12 py-6 font-brand-bold text-xs tracking-widest uppercase hover:scale-105 shadow-2xl shadow-orange-500/30"
+                            class="btn-primary"
                             aria-label="Ver lista completa de productos y sabores">
                             VER PRODUCTOS
                         </a>
@@ -699,7 +828,7 @@
                             <p class="text-zinc-500 line-through text-[9px] md:text-xs font-brand-bold tracking-widest mb-1">$${c.Precio_Original}</p>
                             <p class="text-primary font-brand-bold text-3xl md:text-5xl tracking-tighter leading-none">$${c.Precio_Oferta}</p>
                         </div>
-                        <button class="btn-main bg-primary text-white w-full py-4 md:py-5 font-brand-bold text-[9px] md:text-[10px] tracking-widest uppercase shadow-xl shadow-orange-500/10">PEDIR COMBO</button>
+                        <button class="btn-primary w-full py-4 md:py-5" aria-label="Pedir este combo de empanadas">PEDIR COMBO</button>
                     </div>
                 </div>`;
             }).join('');
@@ -730,7 +859,7 @@
             }).join('');
         }
 
-        // Lógica de Menú Móvil con ARIA
+        // Lógica de Menú Móvil con ARIA y Keyboard Navigation
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const overlay = document.getElementById('mobile-overlay');
@@ -744,9 +873,30 @@
                 // Actualizar ARIA para accesibilidad
                 if (menuBtn) {
                     menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    if (isOpen) {
+                        // Mover focus al menú cuando se abre
+                        setTimeout(() => {
+                            const firstLink = menu.querySelector('a[href]');
+                            if (firstLink) firstLink.focus();
+                        }, 100);
+                    } else {
+                        // Volver focus al botón cuando se cierra
+                        menuBtn.focus();
+                    }
                 }
             }
         }
+
+        // Cerrar menú con Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const menu = document.getElementById('mobile-menu');
+                const overlay = document.getElementById('mobile-overlay');
+                if (menu && menu.classList.contains('mobile-menu-active')) {
+                    toggleMobileMenu();
+                }
+            }
+        });
 
         function navigateAndToggle(e, target) {
             e.preventDefault();
