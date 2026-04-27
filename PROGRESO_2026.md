@@ -1,6 +1,6 @@
 # 📊 Progreso de Mejoras - Bendita Empanada (Abril 2026)
 
-## 🎯 Estado General: 60% Completado (22/37 horas)
+## 🎯 Estado General: 55% Completado (18/37 horas) - Rollback Fase 3
 
 ---
 
@@ -41,22 +41,25 @@
 
 ---
 
-## 🟡 FASE 3: TÉCNICA (10h) - 20% COMPLETADA (2/10h)
+## 🟡 FASE 3: TÉCNICA (10h) - EN STANDBY (0/10h)
 
-### Build Process
-- ✅ **Tailwind Setup (2h)** - Configurado tailwind.config.js, src/styles.css, npm scripts
-  - `npm run build:css` - Compila a dist/styles.css minificado
-  - `npm run watch:css` - Watch mode para desarrollo
-- 📋 **BUILD.md** - Documentación lista para compilación
+### Estado Actual (27 Abril)
+- 🔄 **Rollback Realizado** - Revertido a CDN Tailwind + Poppins + ARIA
+  - Razón: Compilación CSS/JS experimental rompió estilos
+  - Estado actual es ESTABLE y FUNCIONAL
+  - Archivos creados (tailwind.config.js, build.js, src/) conservados para futura implementación
+
+### Build Process (Pendiente)
+- ⏳ **Tailwind Setup** - Esperando autorización para re-implementar
+- ⏳ **Eliminar CDN** - Posterioardo hasta validación de compilación
+- ⏳ **Minificar JS** - Postponed
 
 ### Performance (Pendiente)
-- ⏳ **Eliminar CDN (1h)** - Cambiar script a link a dist/styles.css
 - ⏳ **Optimizar Imágenes (2h)** - Convertir a WebP, crear srcset
 - ⏳ **Preload Fonts (1h)** - Agregar prefetch para Google Fonts
-- ⏳ **Minificar JS (2h)** - Usar terser
-- ⏳ **Postprocess (2h)** - Build system final
+- ⏳ **Build System Final (2h)** - Scripts de minificación con terser, imagemin
 
-**Performance esperado:** Bundle 120KB → 45KB (-62%)
+**Performance esperado:** Bundle 120KB → 45KB (-62%) [pendiente]
 
 ---
 
@@ -86,19 +89,22 @@
 
 ## 📋 Próximos Pasos
 
-### Ahora (Próxima sesión - 15 minutos)
-1. `npm run build:css` - Compilar CSS
-2. Actualizar HTML: eliminar `<script src="tailwind CDN">`, agregar `<link href="dist/styles.css">`
-3. Verificar visual (no debería cambiar nada)
-4. Commit: "Production: CSS compilado, CDN eliminado"
+### Estado Actual (Estable)
+- ✅ Sitio en localhost:3000 funciona correctamente
+- ✅ Todos los cambios de Fase 1 + 2 están integrados
+- ✅ Poppins + ARIA labels operacionales
 
-### Hoy (30 minutos)
-1. Optimizar imágenes a WebP con srcset
-2. Preload Google Fonts
-3. Minificar JS personalizados
-4. Verificar Lighthouse
+### Fase 2 Pendiente (1.5h)
+1. **Focus Trap Avanzado** - Limitar Tab dentro del menú móvil
+   - Autorización necesaria antes de proceder
 
-### Esta semana (Final)
+### Fase 3 (Cuando autorices)
+- Paso a paso, uno por uno
+- Optimización de imágenes (si traes fotos reales)
+- Preload Fonts
+- Build System (si necesitas compilación CSS)
+
+### Esta semana (Deploy)
 1. Testing en navegadores (Chrome, Firefox, Safari, Mobile)
 2. Auditoría de accesibilidad con WAVE
 3. Verificación de performance con WebPageTest
