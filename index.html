@@ -354,10 +354,36 @@
         function loadBenditaData() {
             const benditaData = {
                 products: [
-                    { Nombre: "Carne al Cuchillo", Descripción: "Corte a cuchillo con verdeo suave.", Precio: "4.500", Categoría: "Saladas", Imagen_URL: "assets/carne.png", Activo: "Sí" },
-                    { Nombre: "Tentación Queso", Descripción: "Mix premium de 4 quesos fundidos.", Precio: "4.200", Categoría: "Saladas", Imagen_URL: "assets/queso.png", Activo: "Sí" },
-                    { Nombre: "Pollo Glorioso", Descripción: "Desmechado fino con curry suave.", Precio: "4.800", Categoría: "Saladas", Imagen_URL: "assets/pollo.png", Activo: "Sí" },
-                    { Nombre: "Empanada de Manzana", Descripción: "Dulce con canela y azúcar glass.", Precio: "3.900", Categoría: "Dulces", Imagen_URL: "assets/hero_3.png", Activo: "Sí" }
+                    // TRIGO GOURMET
+                    { Nombre: "Pollo Champiñón-Queso", Descripción: "Relleno de pollo, queso, champiñón y especias.", Precio: "2.800", Categoría: "Trigo Gourmet", Imagen_URL: "assets/hero.png", Activo: "Sí" },
+                    { Nombre: "Pollo Trigo", Descripción: "Relleno de pollo desmechado y especias naturales.", Precio: "2.700", Categoría: "Trigo Gourmet", Imagen_URL: "assets/pollo.png", Activo: "Sí" },
+                    { Nombre: "Ranchera", Descripción: "Carne de res molida, cabano, jamón, maíz tierno, un toque de ají y especias.", Precio: "2.500", Categoría: "Trigo Gourmet", Imagen_URL: "assets/carne.png", Activo: "Sí" },
+                    { Nombre: "Hawaiana Trigo", Descripción: "Combinación clásica de jamón, queso y piña.", Precio: "2.700", Categoría: "Trigo Gourmet", Imagen_URL: "assets/hero_2.png", Activo: "Sí" },
+                    { Nombre: "Casera", Descripción: "Mezcla tradicional de arroz, carne de res molida, pollo y especias.", Precio: "2.400", Categoría: "Trigo Gourmet", Imagen_URL: "assets/hero.png", Activo: "Sí" },
+                    { Nombre: "Argentina", Descripción: "Carne de res molida premium con uvas pasas y especias.", Precio: "2.500", Categoría: "Trigo Gourmet", Imagen_URL: "assets/carne.png", Activo: "Sí" },
+                    { Nombre: "Vegetariana", Descripción: "Espinaca, zuquini, pimentón, zanahoria y maíz tierno.", Precio: "2.600", Categoría: "Trigo Gourmet", Imagen_URL: "assets/hero_3.png", Activo: "Sí" },
+                    { Nombre: "Ricotta con Espinaca", Descripción: "Mezcla suave de espinaca, especias y queso ricotta.", Precio: "2.600", Categoría: "Trigo Gourmet", Imagen_URL: "assets/queso.png", Activo: "Sí" },
+                    
+                    // MAÍZ PETO
+                    { Nombre: "Carne (100g)", Descripción: "Carne de res molida, papa y especias en masa de maíz peto.", Precio: "2.500", Categoría: "Maíz Peto", Imagen_URL: "assets/carne.png", Activo: "Sí" },
+                    { Nombre: "Pollo (100g)", Descripción: "Pollo desmechado, papa y especias en masa de maíz peto.", Precio: "2.600", Categoría: "Maíz Peto", Imagen_URL: "assets/pollo.png", Activo: "Sí" },
+                    { Nombre: "Arepa de Huevo", Descripción: "Masa de maíz peto con huevo frito entero en su interior.", Precio: "2.800", Categoría: "Maíz Peto", Imagen_URL: "assets/hero_2.png", Activo: "Sí" },
+                    { Nombre: "Criolla", Descripción: "Carne de res, papa, huevo cocido y especias.", Precio: "2.600", Categoría: "Maíz Peto", Imagen_URL: "assets/hero.png", Activo: "Sí" },
+                    { Nombre: "Papa-Pollo (140g)", Descripción: "Generoso puré de papa con pollo desmechado.", Precio: "2.400", Categoría: "Maíz Peto", Imagen_URL: "assets/pollo.png", Activo: "Sí" },
+                    { Nombre: "Papa-Carne (140g)", Descripción: "Generoso puré de papa con carne molida.", Precio: "2.400", Categoría: "Maíz Peto", Imagen_URL: "assets/carne.png", Activo: "Sí" },
+                    { Nombre: "Queso Maíz", Descripción: "Queso doble crema fundido en masa de maíz peto.", Precio: "2.600", Categoría: "Maíz Peto", Imagen_URL: "assets/queso.png", Activo: "Sí" },
+                    { Nombre: "Queso y Bocadillo", Descripción: "Queso doble crema con dulce de guayaba (bocadillo).", Precio: "2.600", Categoría: "Maíz Peto", Imagen_URL: "assets/queso.png", Activo: "Sí" },
+                    { Nombre: "Hawaiana Maíz", Descripción: "Jamón, queso y piña en masa de maíz peto.", Precio: "2.600", Categoría: "Maíz Peto", Imagen_URL: "assets/hero_2.png", Activo: "Sí" },
+
+                    // COCTELERAS
+                    { Nombre: "Coctelera Papa Pollo/Carne (30g)", Descripción: "Tamaño bocado, ideal para eventos. Pedido mín. 100u.", Precio: "1.300", Categoría: "Cocteleras", Imagen_URL: "assets/hero_3.png", Activo: "Sí" },
+                    { Nombre: "Coctelera Papa Pollo/Carne (50g)", Descripción: "Tamaño mediano para eventos. Pedido mín. 100u.", Precio: "1.900", Categoría: "Cocteleras", Imagen_URL: "assets/hero_3.png", Activo: "Sí" },
+                    { Nombre: "Coctelera Queso (30g)", Descripción: "Mini empanada de queso para eventos. Pedido mín. 100u.", Precio: "1.500", Categoría: "Cocteleras", Imagen_URL: "assets/hero_3.png", Activo: "Sí" },
+                    { Nombre: "Coctelera Queso (50g)", Descripción: "Empanada de queso mediana para eventos. Pedido mín. 100u.", Precio: "2.000", Categoría: "Cocteleras", Imagen_URL: "assets/hero_3.png", Activo: "Sí" },
+
+                    // SALSAS
+                    { Nombre: "Salsa Bendita (8 Oz)", Descripción: "Salsa artesanal de la casa, envase de 8 onzas.", Precio: "5.000", Categoría: "Salsas", Imagen_URL: "assets/hero_2.png", Activo: "Sí" },
+                    { Nombre: "Salsa Bendita (12 Oz)", Descripción: "Salsa artesanal de la casa, envase de 12 onzas.", Precio: "5.500", Categoría: "Salsas", Imagen_URL: "assets/hero_2.png", Activo: "Sí" }
                 ],
                 combos: [
                     { Nombre: "BENDITO DUO", Descripción: "12 Empanadas Clásicas + 2 Bebidas", Precio_Oferta: "42.000", Precio_Original: "48.000", Imagen_URL: "assets/combo_duo.png", Activo: "Sí" },
