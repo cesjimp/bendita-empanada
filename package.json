@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify",
-    "watch:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch"
+    "build:css": "node build.js",
+    "watch:css": "node build.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/cesjimp/bendita-empanada#readme",
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.4",
     "@tailwindcss/typography": "^0.5.19",
+    "postcss": "^8.4.38",
     "tailwindcss": "^4.2.4"
   }
 }
