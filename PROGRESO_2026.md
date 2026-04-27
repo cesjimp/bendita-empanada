@@ -1,6 +1,6 @@
 # 📊 Progreso de Mejoras - Bendita Empanada (Abril 2026)
 
-## 🎯 Estado General: 55% Completado (18/37 horas) - Rollback Fase 3
+## 🎯 Estado General: 58% Completado (21.5/37 horas)
 
 ---
 
@@ -22,7 +22,7 @@
 
 ---
 
-## 🟠 FASE 2: IMPORTANTE (14h) - 85% COMPLETADA (12/14h)
+## 🟠 FASE 2: IMPORTANTE (17.5h) - 90% COMPLETADA (15.5/17.5h)
 
 ### UX & Diseño
 - ✅ **Slide Indicators (2h)** - Hero slider con puntos navegables, aria-selected, keyboard support
@@ -35,7 +35,14 @@
 ### Accesibilidad Mobile (⏳ PARCIAL - 1.5/3h)
 - ✅ **Escape Key** - Cierra menú móvil
 - ✅ **Focus Management** - Se mueve a primer link al abrir, vuelve al botón al cerrar
-- ⏳ **Focus Trap Avanzado** - Falta limitar Tab dentro del menú (próximo)
+- ⏳ **Focus Trap Avanzado** - Falta limitar Tab dentro del menú
+
+### UX Paginación (✅ 3.5h)
+- ✅ **Paginación Smart (3.5h)** - 8 productos desktop, 6 móvil
+  - Botones navegación en círculos (< y >)
+  - Indicador de página actual
+  - Responsive: recalcula items al redimensionar
+  - Respeta filtros + búsqueda
 
 **Impacto visual:** Design consistency +80%
 
