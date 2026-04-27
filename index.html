@@ -351,24 +351,35 @@
             }, 5000);
         }
 
-        async function loadBenditaData() {
-            try {
-                const response = await fetch('https://n8n.automateall.online/webhook/bendita-data');
-                const data = await response.json();
-                
-                const benditaData = data.data || {};
-                allProducts = benditaData.products || [];
-                renderCategories(allProducts);
-                renderProducts(allProducts);
-                renderCombos(benditaData.combos || []);
-                renderReviews(benditaData.reviews || []);
-                
-                // Inicializar carruseles después de cargar data
-                comboCarousel = setupCarousel('combo-grid', 0.4);
-                reviewCarousel = setupCarousel('review-grid', 0.3); // Review un poco más lento para leer
-            } catch (error) {
-                console.error('Error cargando bendiciones:', error);
-            }
+        function loadBenditaData() {
+            const benditaData = {
+                products: [
+                    { Nombre: "Carne al Cuchillo", Descripción: "Corte a cuchillo con verdeo suave.", Precio: "4.500", Categoría: "Saladas", Imagen_URL: "assets/carne.png", Activo: "Sí" },
+                    { Nombre: "Tentación Queso", Descripción: "Mix premium de 4 quesos fundidos.", Precio: "4.200", Categoría: "Saladas", Imagen_URL: "assets/queso.png", Activo: "Sí" },
+                    { Nombre: "Pollo Glorioso", Descripción: "Desmechado fino con curry suave.", Precio: "4.800", Categoría: "Saladas", Imagen_URL: "assets/pollo.png", Activo: "Sí" },
+                    { Nombre: "Empanada de Manzana", Descripción: "Dulce con canela y azúcar glass.", Precio: "3.900", Categoría: "Dulces", Imagen_URL: "assets/hero_3.png", Activo: "Sí" }
+                ],
+                combos: [
+                    { Nombre: "BENDITO DUO", Descripción: "12 Empanadas Clásicas + 2 Bebidas", Precio_Oferta: "42.000", Precio_Original: "48.000", Imagen_URL: "assets/combo_duo.png", Activo: "Sí" },
+                    { Nombre: "BENDITA FAMILIA", Descripción: "24 Empanadas Variadas + Bebida 1.5L", Precio_Oferta: "79.000", Precio_Original: "90.000", Imagen_URL: "assets/combo_familiar.png", Activo: "Sí" },
+                    { Nombre: "BENDITO EVENTO", Descripción: "50 Empanadas Mixtas para reuniones", Precio_Oferta: "145.000", Precio_Original: "165.000", Imagen_URL: "assets/combo_fiesta.png", Activo: "Sí" }
+                ],
+                reviews: [
+                    { text: "La masa es de otro mundo, se nota la diferencia artesanal.", user: "Camila R." },
+                    { text: "El combo familiar nos salvó la cena. Calidad premium.", user: "Andrés M." },
+                    { text: "La de manzana es una bendición literal. Muy recomendadas.", user: "Sofía G." }
+                ]
+            };
+
+            allProducts = benditaData.products || [];
+            renderCategories(allProducts);
+            renderProducts(allProducts);
+            renderCombos(benditaData.combos || []);
+            renderReviews(benditaData.reviews || []);
+            
+            // Inicializar carruseles después de cargar data
+            comboCarousel = setupCarousel('combo-grid', 0.4);
+            reviewCarousel = setupCarousel('review-grid', 0.3);
         }
 
         function scrollGrid(val) {
